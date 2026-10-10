@@ -1,0 +1,17 @@
+FROM archlinux:latest
+
+RUN pacman -Syu --noconfirm \
+    && pacman -S --noconfirm \
+    sudo \
+    git \
+    curl \
+    && pacman -Scc --noconfirm
+
+RUN useradd -m -s /bin/bash tester \
+    && echo "tester ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/tester \
+    && chmod 0440 /etc/sudoers.d/tester
+
+USER tester
+WORKDIR /home/tester/linux-setup
+
+CMD ["/bin/bash"]

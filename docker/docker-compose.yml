@@ -1,0 +1,18 @@
+services:
+  ubuntu-test:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ubuntu
+    volumes:
+      - ..:/home/tester/linux-setup
+    tty: true
+    stdin_open: true
+
+  arch-test:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.arch
+    volumes:
+      - ..:/home/tester/linux-setup
+    tty: true
+    stdin_open: true
