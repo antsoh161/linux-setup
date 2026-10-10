@@ -25,4 +25,3 @@ if confirm "Clone nvim config (antsoh161/nvim) into \$XDG_CONFIG_HOME/nvim?"; th
   "$SCRIPT_DIR/scripts/setup-nvim-config.sh"
 fi
 
-echo "Done. Secrets are not handled here - set those up manually."

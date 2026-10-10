@@ -22,7 +22,7 @@ libsecret,libsecret-1-dev,libsecret
 libsodium,libsodium-dev,libsodium
 sdbus-cpp,libsdbus-c++-dev,sdbus-cpp
 pipewire,libpipewire-0.3-dev,libpipewire
-wireplumber,libwireplumber-0.4-dev,wireplumber
+wireplumber,libwireplumber-0.5-dev,wireplumber
 polkit,libpolkit-agent-1-dev libpolkit-gobject-1-dev,polkit
 pam,libpam0g-dev,pam
 libwebp,libwebp-dev,libwebp
@@ -37,3 +37,11 @@ libical,libical-dev,libical
 nlohmann-json,nlohmann-json3-dev,nlohmann-json
 stb,libstb-dev,stb
 jemalloc,libjemalloc-dev,jemalloc
+tree-sitter-cli,tree-sitter-cli,tree-sitter-cli
+fzf,fzf,fzf
+wget,wget,wget
+rustup,rustup,rustup
+uv,,uv
+ripgrep,ripgrep,ripgrep
+fd,fd-find,fd
+tmux,tmux,tmux
