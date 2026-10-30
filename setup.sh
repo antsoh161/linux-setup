@@ -29,3 +29,7 @@ if confirm "Install tmux plugin manager (tpm) into \$XDG_CONFIG_HOME/tmux/plugin
   "$SCRIPT_DIR/scripts/setup-tpm.sh"
 fi
 
+if confirm "Install nvm (into \$NVM_DIR, default ~/.nvm) and the latest Node LTS?"; then
+  "$SCRIPT_DIR/scripts/setup-nvm.sh"
+fi
+

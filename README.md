@@ -11,7 +11,8 @@
 - `scripts/setup-dotfiles.sh` — clones the bare dotfiles repo into `~/.dotfiles` and checks it out into `$HOME`, backing up any conflicting files into `~/.dotfiles-backup`
 - `scripts/setup-nvim-config.sh` — clones `antsoh161/nvim` into `$XDG_CONFIG_HOME/nvim`
 - `scripts/setup-tpm.sh` — clones `tmux-plugins/tpm` into `$XDG_CONFIG_HOME/tmux/plugins/tpm`.
-- `setup.sh` — runs the five steps above in order
+- `scripts/setup-nvm.sh` — clones `nvm-sh/nvm` into `$NVM_DIR` (default `~/.nvm`) at the tag pinned in `versions.env`, then runs `nvm install --lts`.
+- `setup.sh` — runs the six steps above in order
 
 ## Testing in Docker
 
