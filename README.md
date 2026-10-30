@@ -9,10 +9,11 @@
 - `scripts/install-packages.sh` — installs the apt/pacman column from `packages.csv`
 - `scripts/build-from-source.sh` — asks per repo, then clones/fetches each confirmed repo in `repos.txt` into `$HOME/src`, checks out the tag pinned in `versions.env`, then runs its `build_cmd`/`install_cmd`.
 - `scripts/setup-dotfiles.sh` — clones the bare dotfiles repo into `~/.dotfiles` and checks it out into `$HOME`, backing up any conflicting files into `~/.dotfiles-backup`
+- `scripts/setup-zsh.sh` — clones oh-my-zsh into `~/.oh-my-zsh` (leaving the dotfiles `.zshrc` alone), installs the zsh-autosuggestions, zsh-history-substring-search and zsh-syntax-highlighting plugins, the pure prompt and the catppuccin highlighting theme, then makes zsh the login shell.
 - `scripts/setup-nvim-config.sh` — clones `antsoh161/nvim` into `$XDG_CONFIG_HOME/nvim`
 - `scripts/setup-tpm.sh` — clones `tmux-plugins/tpm` into `$XDG_CONFIG_HOME/tmux/plugins/tpm`.
 - `scripts/setup-nvm.sh` — clones `nvm-sh/nvm` into `$NVM_DIR` (default `~/.nvm`) at the tag pinned in `versions.env`, then runs `nvm install --lts`.
-- `setup.sh` — runs the six steps above in order
+- `setup.sh` — runs the seven steps above in order
 
 ## Testing in Docker
 

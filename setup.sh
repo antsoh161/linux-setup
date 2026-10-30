@@ -21,6 +21,10 @@ if confirm "Install dotfiles (clone antsoh161/dotfiles bare repo into \$HOME)?";
   "$SCRIPT_DIR/scripts/setup-dotfiles.sh"
 fi
 
+if confirm "Set up zsh (oh-my-zsh, plugins, pure prompt, set as login shell)?"; then
+  "$SCRIPT_DIR/scripts/setup-zsh.sh"
+fi
+
 if confirm "Clone nvim config (antsoh161/nvim) into \$XDG_CONFIG_HOME/nvim?"; then
   "$SCRIPT_DIR/scripts/setup-nvim-config.sh"
 fi
