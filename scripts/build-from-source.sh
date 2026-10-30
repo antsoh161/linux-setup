@@ -13,8 +13,20 @@ tag_for() {
   grep -E "^$1=" "$VERSIONS_FILE" 2>/dev/null | head -1 | cut -d'=' -f2-
 }
 
-tail -n +2 "$REPOS_FILE" | grep -v '^#' | grep -v '^$' | while IFS='|' read -r name url build_cmd install_cmd; do
+confirm() {
+  local reply
+  read -r -p "$1 [y/N] " reply
+  [[ "$reply" =~ ^[Yy]$ ]]
+}
+
+# Rows are read on fd 3 so the per-repo confirm() can still read from stdin.
+while IFS='|' read -r -u 3 name url build_cmd install_cmd; do
   [ -z "$name" ] && continue
+
+  if ! confirm "Build/install $name ($url)?"; then
+    echo ">>> Skipping $name"
+    continue
+  fi
 
   target="$SRC_DIR/$name"
   tag="$(tag_for "$name")"
@@ -31,4 +43,4 @@ tail -n +2 "$REPOS_FILE" | grep -v '^#' | grep -v '^$' | while IFS='|' read -r n
 
   echo ">>> Building $name${tag:+ ($tag)}"
   (cd "$target" && eval "$build_cmd" && eval "$install_cmd")
-done
+done 3< <(tail -n +2 "$REPOS_FILE" | grep -v '^#' | grep -v '^$')

@@ -25,3 +25,7 @@ if confirm "Clone nvim config (antsoh161/nvim) into \$XDG_CONFIG_HOME/nvim?"; th
   "$SCRIPT_DIR/scripts/setup-nvim-config.sh"
 fi
 
+if confirm "Install tmux plugin manager (tpm) into \$XDG_CONFIG_HOME/tmux/plugins/tpm?"; then
+  "$SCRIPT_DIR/scripts/setup-tpm.sh"
+fi
+
